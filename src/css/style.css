@@ -1,25 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
-@media screen and (max-width: 768px)  {
-
-  * {
-    font-family: "Poppins", sans-serif;
-  }
+@media screen and (max-width: 768px) {
 
   body {
     background-image: none;
     height: 100vh;
     width: 100vw;
-  }
-  #container_nav {
-    display: none;
+    font-family: "Poppins", sans-serif;
+    background-color: #f6eee8;
   }
 
   .container_header {
-    height: 42vh;
+    height: 30vh;
     width: 100vw;
-    background-color: #c69c73;
+    background-image: url('../../img/plano_de_fundo.jpeg');
+    background-size: cover;
+    background-position: center;
     color: #451a0e;
     border-radius: 0px 0px 47px 47px;
     display: flex;
@@ -27,9 +21,12 @@
     align-items: center;
     font-weight: 500;
     font-size: 19px;
-    gap: 75px;
-    
+    gap: 24px;
+
+
+
   }
+
 
   #img_header {
     display: flex;
@@ -37,57 +34,39 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 19px;
-    margin-top: 146px;
-  }
-
-  #div_busca {
-    background-color: #c69c73;
-    border:solid 1px #451a0e;
-    border-radius:15px;
-    width:325px;
-    height:28px;
-  }
-
-  #txtBusca{
-    float:left;
-    background-color:transparent;
-    padding-left:7px;
-    font-size:16px;
-    border:none;
-    height:28px;
-    width:191px;
-  }
-
-  #div_busca img{
-    float:left;
-    width: 28px;
-    padding-left: 6px;
-  }
-
-  #txtBusca::placeholder {
-    color: #451a0e9a;
+    margin-top: 106px;
   }
 
   .container_body {
     width: 89vw;
-    margin: 60px 45px;
-    
+    margin: 40px 25px;
+
   }
 
   .container_body h2 {
-    font-weight: 600;
-    font-size: 18px;
-    padding-bottom: 30px;
+    font-weight: 900;
+    font-size: 25px;
+    padding-bottom: 40px;
+    text-align: center;
+    color: #451a0e;
+  }
+
+  .comidas_body h3 {
+    font-weight: 900;
+    font-size: 20px;
+    padding-bottom: 5px 10px;
+    text-align: center;
+    color: #451a0e;
   }
 
   #nav_body button {
     background-color: #ffffff;
-    border:solid 1px #451a0e;
+    border: solid 1px #451a0e;
     color: #451a0e;
     font-weight: 500;
-    border-radius:15px;
+    border-radius: 15px;
     width: 107px;
     height: 25px;
   }
@@ -99,32 +78,58 @@
   }
 
   .div_produtos {
-    width: 110px;
-    height: 146px;
+    width: 160px;
+    height: 140px;
     border-radius: 15px;
-    background-color: #f6eee8;
-    margin: 25px 0px;
-    font-size: 11px;
+    margin: 5px 0px;
+    font-size: 20px;
     text-align: center;
     color: #451a0e;
     font-weight: bolder;
+    padding: 10px;
+    background-color: #ffffff;
+
   }
 
   #produtos {
     display: flex;
-    gap: 15px;
+    gap: 20px;
   }
 
   .div_produtos img {
-    width: 92px;
-    height: 92px;
-    border-radius: 16px;
-    padding: 8.5px
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+
   }
 
 
   .div_produtos p {
-    margin-top: 10px;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .valor_produtos {
+    font-size: 15px;
+    color: #451a0e;
+
+  }
+
+  #produtos2 {
+    display: flex;
+    gap: 20px;
+
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   }
 
   #container_footer img {
@@ -135,7 +140,8 @@
 
   #container_footer {
     display: flex;
-    margin: 135px 0px 0px -19px;
+    align-items: center;
+    justify-content: center;
   }
 
   .container_body_produto {
@@ -197,10 +203,10 @@
 
   #sacola_button button {
     background-color: #451a0e;
-    border:solid 1px #451a0e;
-    border-radius:15px;
+    border: solid 1px #451a0e;
+    border-radius: 15px;
     width: 250px;
-    height:32px;
+    height: 32px;
     color: #c69c73;
     font-size: 12px;
   }
@@ -209,11 +215,11 @@
     font-weight: 800;
     color: #451a0e;
   }
-  
+
   .spanC {
     color: blue;
   }
-  
+
   .spanA {
     color: red;
   }
@@ -239,9 +245,9 @@
 
   .body_estoque img {
     width: 65px;
-    margin: 22px -16px 10px 10px ;
+    margin: 22px -16px 10px 10px;
   }
-  
+
   .body_estoque h1 {
     padding-left: 102px;
     margin-bottom: 11px;
@@ -269,7 +275,8 @@
     background-color: #f6eee8;
   }
 
-  .estoque h3, p {
+  .estoque h3,
+  p {
     text-align: center;
     padding: 3px;
   }

@@ -1,0 +1,112 @@
+/* ====== Estilo base ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f8ebe3;
+  color: #3b1d12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* ====== Cabeçalho ====== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.voltar-btn {
+  position: absolute;
+  left: 10px;
+  background-color: #3b1d12;
+  color: #f8ebe3;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ====== Lista de Pedidos ====== */
+.lista-pedidos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  overflow-y: auto;
+  padding-bottom: 1rem;
+}
+
+/* ====== Cartão do Pedido ====== */
+.pedido-card {
+  background-color: #fff3ed;
+  border: 2px solid #3b1d12;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(59, 29, 18, 0.1);
+}
+
+.pedido-card h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.pedido-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+/* ====== Botão Entregue ====== */
+.btn-entregue {
+  display: block;
+  margin: 0.8rem auto 0;
+  background-color: #3b1d12;
+  color: #fff3ed;
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-entregue:hover {
+  background-color: #5a2e1b;
+}
+
+/* ====== Responsividade ====== */
+@media (max-width: 480px) {
+  body {
+    padding: 0.8rem;
+  }
+
+  .pedido-card {
+    padding: 0.9rem;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  .btn-entregue {
+    font-size: 0.85rem;
+  }
+}

@@ -1,106 +1,147 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Padaria Camargo</title>
-    <link rel="stylesheet" href="src/reset.css">
-    <link rel="stylesheet" href="src/style.css">
-    <link rel="stylesheet" href="src/menu_hamburguer.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-    <script defer src="src/java_script/stogare.js"></script>
-    <script defer src="src/java_script/produtos.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Padaria Camargo</title>
+  <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="src/css/style.css">
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <script defer src="src/java_script/stogare.js"></script>
+  <script defer src="src/java_script/produtos.js"></script>
 
 </head>
+<!-- João Natsumi e Gustavo Gomes  -->
 <body>
-  <!-- Botão Hamburguer -->
-  <button class="hamburguer" id="btnMenu" aria-label="Abrir menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-  <!-- Menu lateral -->
-  <nav class="side-menu" id="sideMenu">
-    <div class="side-menu-content">
-      <div class="perfil">
-        <i class='bx bxs-user-circle'></i>
-        <span> Olá, Fulano! </span>
-      </div>
-      <ul>
-        <li><a href="#"> Seu Perfil </a></li>
-        <li><a href="#"> Início </a></li>
-        <li><a href="#"> Favoritos </a></li>
-        <li><a href="#"> Sacola </a></li>
-        <li><a href="#"> Bebidas </a></li>
-        <li><a href="#"> Lanches </a></li>
-      </ul>
-
-    </div>
-  </nav>
-  <!-- Fundo escurecido -->
-  <div class="backdrop" id="backdrop"></div>
-  <div id="container_nav">
-    <a href="#"><img src="img/pngegg.png" alt="Chapéudepalha"></a>
-    <nav>
-      <div id="nav_bar">
-        <p> <a href="#"> HOME </a> </p>
-        <p> <a href="#"> LANCHES </a> </p>
-        <p> <a href="#"> BEBIDAS </a> </p>
-        <p> <a href="#"> SOBRE NÓS </a> </p>
-      </div>
-    </nav>
-    <div id="img_person"><a href="#"><img  id="login_person" src="img/🦆 icon _person_.svg" alt="login_person" ></a></div>
-  </div>
-
+  <!-- Logo Padaria -->
   <div class="container_header">
     <div id="img_header">
-      <img src="img/logopadaria.png" alt="Padaria Camargo Logo" style="max-width:260px; width:100%; margin-top: -50px;">
-    </div>
-
-     <div id="div_busca">
-      <img src="img/lupa.png" alt="Buscar..."/>
-      <input type="text" id="txtBusca" placeholder="Pesquisar"/>
+      <img src="img/logopadaria.png" alt="Padaria Camargo Logo"
+        style="max-width:190px; width: 100%; margin-top: -50px;">
     </div>
   </div>
 
+  <!-- Produtos -->
   <div class="container_body">
-    <h2> Nossos Produtos </h2>
-      <div id="nav_body">
-        <button><p> COMIDAS </p></button>
-        <button><p> BEBIDAS </p></button>
-        <button><p> DOCES </p></button>
-      </div>
-      <div id="produtos">
-        <a href="cachorroquente.html">
-          <div class="div_produtos">
-            <img src="img/cq.png" alt="cachorro_quente_img">
-            <p> Cachorro Quente </p>
-          </div>
-        </a>
-        <a href="cachorroquente.html">
-          <div class="div_produtos">
-            <img src="img/paodegue.jpg" alt="pão_de_queijo_img">
-            <p> Pão de Queijo </p>
-          </div>
-        </a>
-        <a href="cachorroquente.html">
+    <h2> Seja bem-vindo! </h2>
+
+    <div class="comidas_body">
+      <h3>COMIDAS</h3>
+    </div>
+    <div id="produtos">
+
+      <a href="cachorroquente.html">
         <div class="div_produtos">
-          <img src="img/coca-cola.jpg" alt="picles_img">
-          <p> Coca-Cola </p>
+          <img src="img/cq.png" alt="cachorro_quente_img">
+          <p> Cachorro Quente</p> <br>
         </div>
-        </a>
-      </div>
-      <a href="estoque.html">estoque</a>
-      <footer>
-        <div id="container_footer">
+        <div class="valor_produtos">
+          <p>R$ 10,00</p>
+        </div>
+      </a>
+      <a href="cachorroquente.html">
+        <div class="div_produtos">
+          <img src="img/paodegue.jpg" alt="pão_de_queijo_img">
+          <p> Pão de Queijo </p> <br>
+        </div>
+        <div class="valor_produtos">
+          <p>R$ 5,00</p>
+        </div>
+      </a>
+    </div> <br>
+    <div id="produtos2">
+      <a href="cachorroquente.html">
+        <div class="div_produtos">
+          <img src="img/batata1.jpg" alt="batata_frita_img">
+          <p>Batata Frita</p> <br>
+        </div>
+        <div class="valor_produtos">
+          <p>R$ 10,00</p>
+        </div>
+      </a>
+      <a href="cachorroquente.html">
+        <div class="div_produtos">
+          <img src="img/minipizza.jpg" alt="mini_pizza_img">
+          <p> Mini Pizza </p> <br>
+        </div>
+        <div class="valor_produtos">
+          <p>R$ 5,00</p>
+        </div>
+      </a>
+    </div> <br>
+    <div id="produtos2">
+      <a href="cachorroquente.html">
+        <div class="div_produtos">
+          <img src="img/hamburgao.jpg" alt="hamburgao_img">
+          <p>Hamburgão</p> <br>
+        </div>
+        <div class="valor_produtos">
+          <p>R$ 9,00</p>
+        </div>
+      </a>
+      <a href="cachorroquente.html">
+        <div class="div_produtos">
+          <img src="img/salgado.jpg" alt="salgado_jpg">
+          <p> Salgadinho </p> <br>
+        </div>
+        <div class="valor_produtos">
+          <p>R$ 2,00</p>
+        </div>
+      </a>
+    </div> <br>
+    <div class="comidas_body">
+      <h3>BEBIDAS</h3>
+    </div>
+    <div id="produtos2">
+      <a href="cachorroquente.html">
+        <div class="div_produtos">
+          <img src="img/coca-cola.jpg" alt="coca_cola_img">
+          <p>Coca-Cola</p> <br>
+        </div>
+        <div class="valor_produtos">
+          <p>R$ 4,50</p>
+        </div>
+      </a>
+      <a href="cachorroquente.html">
+        <div class="div_produtos">
+          <img src="img/pepsi.jpg" alt="pepsi_img">
+          <p> Pepsi </p> <br>
+        </div>
+        <div class="valor_produtos">
+          <p>R$ 4,50</p>
+        </div>
+      </a>
+    </div>
+    <div id="produtos2">
+      <a href="cachorroquente.html">
+        <div class="div_produtos">
+          <img src="img/fanta.jpg" alt="fanta_img">
+          <p> Fanta </p> <br>
+        </div>
+        <div class="valor_produtos">
+          <p>R$ 4,50</p>
+        </div>
+      </a>
+      <a href="cachorroquente.html">
+        <div class="div_produtos">
+          <img src="img/suco.jpg" alt="suco_img">
+          <p> Natural One </p> <br>
+        </div>
+        <div class="valor_produtos">
+          <p>R$ 7,50</p>
+        </div>
+      </a>
+    </div>
+    <footer>
+      <div id="container_footer">
             <a href="#"><img src="img/home.png" alt="home"></a>
             <a href="#"><img src="img/coracao.png" alt="coracao"></a>
-            <a href="#"><img src="img/calendário.png" alt="calendario"></a>
             <a href="sacola.html"><img src="img/sacola.png" alt="sacola"></a>
-          </div>
-      </footer>
-  </div>
+      </div>
+    </footer>
 </body>
-<script src="src/java_script/menu_hamburguer.js"></script>
+
 </html>

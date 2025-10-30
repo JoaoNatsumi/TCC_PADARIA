@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sacola</title>
-    <link rel="stylesheet" href="src/reset.css">
-    <link rel="stylesheet" href="src/sacola.css">
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/sacola.css">
 
     <script async src="src/java_script/sacola.js"> </script>
 </head>
@@ -25,7 +25,7 @@
 
     <div class="total">
       <strong>Total:</strong>
-      <span>14,50</span>
+      <span class="total">14,50</span>
     </div>
 
     <div class="section">
@@ -40,6 +40,15 @@
 
     <button class="order-button">FAZER PEDIDO</button>
   </div>
+  <!-- Área onde o QR Code será exibido -->
+<div id="qrcode-container" class="qrcode-container" style="display:none;">
+  <div id="qrcode"></div>
+  <button id="fechar-qrcode">Fechar</button>
+</div>
+
+<!-- Biblioteca do QRCode.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 </body>
 
 </html>
