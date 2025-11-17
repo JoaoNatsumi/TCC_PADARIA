@@ -1,4 +1,3 @@
-/* ====== Estilo base ====== */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +14,7 @@ body {
   padding: 1rem;
 }
 
-/* ====== Cabeçalho ====== */
+
 header {
   display: flex;
   align-items: center;
@@ -43,7 +42,7 @@ header h1 {
   cursor: pointer;
 }
 
-/* ====== Lista de Pedidos ====== */
+
 .lista-pedidos {
   display: flex;
   flex-direction: column;
@@ -54,7 +53,7 @@ header h1 {
   padding-bottom: 1rem;
 }
 
-/* ====== Cartão do Pedido ====== */
+
 .pedido-card {
   background-color: #fff3ed;
   border: 2px solid #3b1d12;
@@ -74,7 +73,6 @@ header h1 {
   margin-bottom: 0.25rem;
 }
 
-/* ====== Botão Entregue ====== */
 .btn-entregue {
   display: block;
   margin: 0.8rem auto 0;
@@ -92,7 +90,6 @@ header h1 {
   background-color: #5a2e1b;
 }
 
-/* ====== Responsividade ====== */
 @media (max-width: 480px) {
   body {
     padding: 0.8rem;

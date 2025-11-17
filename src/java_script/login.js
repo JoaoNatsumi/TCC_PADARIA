@@ -1,18 +1,13 @@
-// ===============================
-// BANCO DE DADOS LOCAL (LocalStorage)
-// ===============================
-
-// Cadastro inicial somente na primeira vez
 function inicializarBanco() {
     if (!localStorage.getItem("usuarios")) {
 
         const usuarios = [
-            // Funcionários
+
             {
                 nome: "João Vitor Manso Natsumi",
                 curso: "3º DB",
                 funcionario: true,
-                senha: "1234" // senha exemplo
+                senha: "1234"
             },
             {
                 nome: "Gustavo Gomes Silva",
@@ -27,14 +22,13 @@ function inicializarBanco() {
                 senha: "1234"
             },
 
-            // Clientes
             {
                 nome: "Daniel Moreira",
                 curso: "3º DB",
                 funcionario: false
             },
             {
-                nome: "Joao Braite",
+                nome: "Diana Braite",
                 curso: "3º DB",
                 funcionario: false
             },
@@ -51,9 +45,7 @@ function inicializarBanco() {
 inicializarBanco();
 
 
-// ===============================
-// FUNÇÃO DE LOGIN
-// ===============================
+
 function validarLogin() {
     const nome = document.getElementById("nome").value.trim();
     const curso = document.getElementById("curso").value;
@@ -62,27 +54,27 @@ function validarLogin() {
 
     const usuarios = JSON.parse(localStorage.getItem("usuarios"));
 
-    // Procurar usuário pelo nome + curso
+    
     const usuario = usuarios.find(
         u => u.nome.toLowerCase() === nome.toLowerCase() && u.curso === curso
     );
 
-    // Caso usuário não exista
+    
     if (!usuario) {
         alert("Usuário não encontrado no sistema!");
         return false;
     }
 
-    // ✅ PEGAR PRIMEIRO NOME
+    
     const primeiroNome = usuario.nome.split(" ")[0];
 
-    // Caso seja cliente e tentou usar como funcionário
+    
     if (!usuario.funcionario && funcionarioCheck) {
         alert("Esse usuário não é funcionário!");
         return false;
     }
 
-    // Caso seja funcionário → precisa de senha
+    
     if (usuario.funcionario) {
         if (!senha) {
             alert("Digite a senha do funcionário!");
@@ -94,32 +86,27 @@ function validarLogin() {
             return false;
         }
 
-        // LOGIN DO FUNCIONÁRIO
+        
         localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
 
-        // ✅ ALERT PERSONALIZADO COM PRIMEIRO NOME
+        
         alert("Bem-vindo, " + primeiroNome + "!");
 
-        window.location.href = "funcionario.html"; // redirecionamento para funcionário
+        window.location.href = "funcionario.html"; 
         return false;
     }
 
-    // LOGIN DO CLIENTE
+    
     localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
 
-    // ✅ ALERT PERSONALIZADO COM PRIMEIRO NOME
+
     alert("Bem-vindo, " + primeiroNome + "!");
 
-    window.location.href = "index.html"; // redirecionamento para cliente
+    window.location.href = "index.html"; 
 
-    return false; // evita reload do form
+    return false; 
 }
 
-
-
-// ===============================
-// MOSTRAR/ESCONDER CAMPO DE SENHA
-// ===============================
 function mostrarCampoSenha() {
     const check = document.getElementById("funcionario");
     const pw = document.getElementById("pw-wrapper");
@@ -133,10 +120,6 @@ function mostrarCampoSenha() {
     }
 }
 
-
-// ===============================
-// MOSTRAR/OCULTAR SENHA
-// ===============================
 function toggleSenha() {
     let campo = document.getElementById("senha");
     campo.type = campo.type === "password" ? "text" : "password";

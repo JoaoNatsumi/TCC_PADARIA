@@ -1,51 +1,46 @@
-// ===============================
-//  TELA DE PEDIDOS - pedidos.js
-// ===============================
-
-// Elemento onde os pedidos serão listados
 const listaPedidos = document.getElementById("lista-pedidos");
 
-// Função para carregar pedidos salvos no localStorage
 function carregarPedidos() {
     const pedidos = JSON.parse(localStorage.getItem("pedidos_salvos")) || [];
     const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
-    // Limpa área de pedidos
     listaPedidos.innerHTML = "";
 
-    // Nenhum pedido encontrado
-    if (pedidos.length === 0) {
+    if (!usuarioLogado) {
+        listaPedidos.innerHTML = "<p>Erro: nenhum usuário logado.</p>";
+        return;
+    }
+
+    const nomeUsuario = usuarioLogado.nome.toLowerCase();
+    const ehFuncionario = usuarioLogado.funcionario;
+
+    let pedidosFiltrados = [];
+
+    if (ehFuncionario) {
+        
+        pedidosFiltrados = pedidos;
+    } else {
+        
+        pedidosFiltrados = pedidos.filter(
+            p => p.usuario?.toLowerCase() === nomeUsuario
+        );
+    }
+
+    if (pedidosFiltrados.length === 0) {
         listaPedidos.innerHTML = `
             <p style="text-align:center; font-size:18px; color:#444;">
-                Você ainda não possui pedidos.
+                Nenhum pedido encontrado.
             </p>
         `;
         return;
     }
 
-    // Se tiver usuário logado, cria o título personalizado
-    let nomeCompleto = "Usuário Desconhecido";
-    let curso = "";
-
-    if (usuarioLogado) {
-        nomeCompleto = usuarioLogado.nome;
-        curso = usuarioLogado.curso;
-    }
-
-    // Pega primeiro e segundo nome, se existirem
-    const partesNome = nomeCompleto.split(" ");
-    const nomeExibicao =
-        partesNome.length >= 2
-            ? `${partesNome[0]} ${partesNome[1]}`
-            : partesNome[0];
-
-    // Renderiza cada pedido
-    pedidos.forEach((pedido, index) => {
+    pedidosFiltrados.forEach((pedido, index) => {
         const div = document.createElement("div");
         div.classList.add("pedido-item");
 
         div.innerHTML = `
-            <h3>Pedido de ${nomeExibicao} – ${curso}</h3>
+            <h3>${pedido.usuario} – ${pedido.curso}</h3>
             <p><strong>Itens:</strong> ${pedido.itens.join(", ")}</p>
             <p><strong>Total:</strong> R$ ${pedido.total.toFixed(2)}</p>
             <button class="btn-entregar" data-index="${index}">
@@ -56,13 +51,10 @@ function carregarPedidos() {
         listaPedidos.appendChild(div);
     });
 
-    // Configura os botões
-    configurarBotoesMarcarEntregue();
+    configurarBotoes();
 }
 
-
-// Configura cliques dos botões "Marcar como entregue"
-function configurarBotoesMarcarEntregue() {
+function configurarBotoes() {
     const botoes = document.querySelectorAll(".btn-entregar");
 
     botoes.forEach(botao => {
@@ -73,16 +65,14 @@ function configurarBotoesMarcarEntregue() {
     });
 }
 
-// Função que remove o pedido do localStorage
 function removerPedido(index) {
     let pedidos = JSON.parse(localStorage.getItem("pedidos_salvos")) || [];
 
-    pedidos.splice(index, 1); // remove pelo índice
+    pedidos.splice(index, 1);
 
     localStorage.setItem("pedidos_salvos", JSON.stringify(pedidos));
 
-    carregarPedidos(); // recarrega a tela
+    carregarPedidos();
 }
 
-// Inicia carregando os pedidos ao abrir a página
 carregarPedidos();

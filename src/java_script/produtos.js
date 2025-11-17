@@ -14,23 +14,19 @@ let valor = document.querySelector(".valor")
 let descricao = document.querySelector(".texto")
     descricao.innerText = produto.descricao   
 
-// var voltar = document.querySelector(".button_voltar")
-//     voltar.addEventListener("click",() =>{
-//         localStorage.clear()
-//     })
 
 const botaoAdicionar = document.querySelector(".add_bag");
 
 botaoAdicionar.addEventListener("click", () => {
-    // muda visual do botão
+   
     botaoAdicionar.style.backgroundColor = "#ffffff";
     botaoAdicionar.style.color = "#451a0e";
     botaoAdicionar.style.border = "1px solid #451a0e";
 
-    // alerta
+  
     alert("✅ Item adicionado à sacola!");
 
-    // volta para o estilo original após 800ms
+    
     setTimeout(() => {
         botaoAdicionar.style.backgroundColor = "#451a0e";
         botaoAdicionar.style.color = "#c69c73";

@@ -115,7 +115,7 @@
 
   .container_title img {
     width: 90px;
-    max-width: 100px; /* Exemplo: define o tamanho máximo das imagens */
+    max-width: 100px; 
     height: auto;
   }
 
@@ -124,7 +124,6 @@
     flex-direction: column;
   } 
 
-  /* ====== MELHORIA NOS CARDS DOS PRODUTOS ====== */
   .div_produtos {
     width: 150px;
     height: 180px;
@@ -152,7 +151,6 @@
     display: flex;
     gap: 20px;
     justify-content: center;
-    /* centraliza container na página */
     align-items: center;
     width: 100%;
   }

@@ -84,7 +84,7 @@ function altera_nome(nome) {
 
 const add_bag = document.querySelector(".add_bag");
 
-// Recupera do localStorage, ou inicia lista vazia
+
 let lista_itens = JSON.parse(localStorage.getItem("info_produto")) || [];
 
 add_bag.addEventListener("click", () => {
@@ -99,10 +99,9 @@ add_bag.addEventListener("click", () => {
 
   lista_itens.push(item);
 
-  // Salva no localStorage
   localStorage.setItem("info_produto", JSON.stringify(lista_itens));
 
-  console.log(lista_itens); // Apenas para teste no console (opcional)
+  console.log(lista_itens); 
 });
 
 

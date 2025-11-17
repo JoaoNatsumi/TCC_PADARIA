@@ -5,7 +5,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* Fundo suave em caramelos */
+
 body {
     background: linear-gradient(135deg, #d4b99e, #f9f2eb);
     display: flex;
@@ -15,7 +15,7 @@ body {
     padding: 40px 20px;
 }
 
-/* Card do login */
+
 .login-card {
     width: 100%;
     max-width: 420px;
@@ -38,7 +38,7 @@ body {
     }
 }
 
-/* Header */
+
 .login-header {
     background-image: url('../../img/plano_de_fundo.jpeg');
     background-size: cover;
@@ -58,7 +58,7 @@ body {
     font-weight: 700;
 }
 
-/* Body */
+
 .login-body {
     padding: 40px 25px;
     text-align: center;
@@ -71,7 +71,7 @@ body {
     font-weight: 600;
 }
 
-/* Inputs gerais */
+
 .login-body input,
 .login-body select {
     width: 100%;
@@ -90,27 +90,26 @@ body {
     box-shadow: 0 0 10px rgba(110, 60, 30, 0.3);
 }
 
-/* Checkbox funcionário */
 .funcionario-check {
-  display: inline-flex;       /* fica só no tamanho do conteúdo */
-  align-items: center;        /* alinha verticalmente input + texto */
-  gap: 6px;                   /* distância pequena entre checkbox e texto */
-  margin: 10px 0 24px 0;      /* ajuste vertical */
+  display: inline-flex;      
+  align-items: center;        
+  gap: 6px;                  
+  margin: 10px 0 24px 0;     
   font-size: 17px;
   color: #4d2a15;
   cursor: pointer;
   user-select: none;
-  line-height: 1;             /* evita desalinhamento por line-height grande */
+  line-height: 1;             
 }
 
 .funcionario-check input[type="checkbox"] {
   -webkit-appearance: checkbox;
   appearance: checkbox;
-  width: 18px;                /* tamanho do quadrado */
+  width: 18px;                
   height: 18px;
-  margin: 0;                  /* remove margem padrão do navegador */
+  margin: 0;                  
   padding: 0;
-  transform: translateY(0.5px) scale(1.1); /* pequeno ajuste vertical/escala */
+  transform: translateY(0.5px) scale(1.1); 
   cursor: pointer;
   flex: 0 0 auto;
   display: inline-block;
@@ -121,23 +120,23 @@ body {
   display: inline-block;
   vertical-align: bottom;
   line-height: 1;
-  transform: translateY(0); /* ajuste fino: mude para -1px / 1px se precisar */
+  transform: translateY(0); 
 }
 
 .funcionario-check.tight { gap: 5px; }
 
-/* Campo de senha envolvido */
+
 .password-wrapper {
     position: relative;
     display: none;
-    /* escondido inicialmente */
+    
 }
 
 .password-wrapper input {
     padding-right: 45px;
 }
 
-/* Ícone do olho centralizado */
+
 .toggle-password {
     position: absolute;
     right: 12px;
@@ -154,7 +153,7 @@ body {
 }
 
 
-/* Botão */
+
 .login-body button {
     width: 100%;
     padding: 18px;
