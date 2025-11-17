@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Padaria Camargo</title>
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/login.css">
+</head>
+    <script src="src/java_script/login.js"></script>
+<body>
+
+    <div class="login-card">
+
+        <div class="login-header">
+            <img src="img/logopadaria.png" alt="logo padaria">
+            <h1>Padaria Camargo</h1>
+        </div>
+
+        <div class="login-body">
+
+            <h2>Bem-Vindo</h2>
+
+            <form onsubmit="return validarLogin()">
+
+                <input type="text" id="nome" placeholder="Seu Nome" required>
+
+                <select id="curso" required>
+                    <option value="">Escolha Seu Curso</option>
+                    <option value="1º DA">1º DA</option>
+                    <option value="2º DA">2º DA</option>
+                    <option value="3º DA">3º DA</option>
+                    <option value="1º DB">1º DB</option>
+                    <option value="2º DB">2º DB</option>
+                    <option value="3º DB">3º DB</option>
+                    <option value="1º AA">1º AA</option>
+                    <option value="2º AA">2º AA</option>
+                    <option value="3º AA">3º AA</option>
+                    <option value="1º AB">1º AB</option>
+                    <option value="2º AB">2º AB</option>
+                    <option value="3º AB">3º AB</option>
+                    <option value="1º CA">1º CA</option>
+                    <option value="2º CA">2º CA</option>
+                    <option value="3º CA">3º CA</option>
+                    <option value="1º EA">1º EA</option>
+                    <option value="2º EA">2º EA</option>
+                    <option value="3º EA">3º EA</option>
+                    <option value="1º FA">1º FA</option>
+                    <option value="2º FA">2º FA</option>
+                    <option value="3º FA">3º FA</option>
+                    <option value="1º TB">1º TB</option>
+                    <option value="2º TB">2º TB</option>
+                    <option value="3º TB">3º TB</option>
+                    <option value="1º GA">1º GA</option>
+                    <option value="2º GA">2º GA</option>
+                    <option value="3º GA">3º GA</option>
+                    <option value="1º KA">1º KA</option>
+                    <option value="2º KA">2º KA</option>
+                    <option value="3º KA">3º KA</option>
+                    <option value="1º NA">1º NA</option>
+                    <option value="2º NA">2º NA</option>
+                    <option value="3º NA">3º NA</option>
+                    <option value="1º NB">1º NB</option>
+                    <option value="2º NB">2º NB</option>
+                    <option value="3º NB">3º NB</option>
+                    <option value="1º SA">1º SA</option>
+                    <option value="2º SA">2º SA</option>
+                    <option value="3º SA">3º SA</option>
+                </select>
+
+                <!-- Campo de senha (escondido) -->
+                <div class="password-wrapper" id="pw-wrapper">
+                    <input type="password" id="senha" placeholder="Senha (somente funcionários)">
+                    <span class="toggle-password" onclick="toggleSenha()">👁</span>
+                </div>
+
+                <!-- Checkbox funcionário -->
+                <label class="funcionario-check">
+                    <input type="checkbox" id="funcionario" onchange="mostrarCampoSenha()">
+                    <span>Entrar como Funcionário</span>
+                </label>
+
+                <button type="submit">ENTRAR</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSenha() {
+            let campo = document.getElementById("senha");
+            campo.type = campo.type === "password" ? "text" : "password";
+        }
+
+        function mostrarCampoSenha() {
+            const check = document.getElementById("funcionario");
+            const pw = document.getElementById("pw-wrapper");
+
+            if (check.checked) {
+                pw.style.display = "block";
+                document.getElementById("senha").setAttribute("required", true);
+            } else {
+                pw.style.display = "none";
+                document.getElementById("senha").removeAttribute("required");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

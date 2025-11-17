@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Fundo suave em caramelos */
+body {
+    background: linear-gradient(135deg, #d4b99e, #f9f2eb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Card do login */
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    background: #fffaf5;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+.login-header {
+    background-image: url('../../img/plano_de_fundo.jpeg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.login-header img {
+    width: 130px;
+    margin-bottom: 10px;
+}
+
+.login-header h1 {
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* Body */
+.login-body {
+    padding: 40px 25px;
+    text-align: center;
+}
+
+.login-body h2 {
+    color: #4d2a15;
+    font-size: 24px;
+    margin-bottom: 35px;
+    font-weight: 600;
+}
+
+/* Inputs gerais */
+.login-body input,
+.login-body select {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #4d2a15;
+    border-radius: 14px;
+    background: white;
+    margin-bottom: 20px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.login-body input:focus,
+.login-body select:focus {
+    border-color: #4d2a15;
+    box-shadow: 0 0 10px rgba(110, 60, 30, 0.3);
+}
+
+/* Checkbox funcionário */
+.funcionario-check {
+  display: inline-flex;       /* fica só no tamanho do conteúdo */
+  align-items: center;        /* alinha verticalmente input + texto */
+  gap: 6px;                   /* distância pequena entre checkbox e texto */
+  margin: 10px 0 24px 0;      /* ajuste vertical */
+  font-size: 17px;
+  color: #4d2a15;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;             /* evita desalinhamento por line-height grande */
+}
+
+.funcionario-check input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+  appearance: checkbox;
+  width: 18px;                /* tamanho do quadrado */
+  height: 18px;
+  margin: 0;                  /* remove margem padrão do navegador */
+  padding: 0;
+  transform: translateY(0.5px) scale(1.1); /* pequeno ajuste vertical/escala */
+  cursor: pointer;
+  flex: 0 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.funcionario-check span {
+  display: inline-block;
+  vertical-align: bottom;
+  line-height: 1;
+  transform: translateY(0); /* ajuste fino: mude para -1px / 1px se precisar */
+}
+
+.funcionario-check.tight { gap: 5px; }
+
+/* Campo de senha envolvido */
+.password-wrapper {
+    position: relative;
+    display: none;
+    /* escondido inicialmente */
+}
+
+.password-wrapper input {
+    padding-right: 45px;
+}
+
+/* Ícone do olho centralizado */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 22px;
+    color: #4d2a15;
+    height: fit-content;
+    transform: translateY(-50%) scale(0.9);
+}
+
+
+/* Botão */
+.login-body button {
+    width: 100%;
+    padding: 18px;
+    background: #4d2a15;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-body button:hover {
+    background: #4d2a15;
+    transform: scale(1.02);
+}

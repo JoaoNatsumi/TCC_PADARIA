@@ -13,8 +13,9 @@ function formatarValor(valor) {
 function calcularTotal() {
   let total = 0;
   document.querySelectorAll(".item-valor").forEach(span => {
-    // Remove "R$", espaços e converte para número
-    const valor = parseFloat(span.textContent.replace("R$", "").replace(",", ".").trim());
+    const valor = parseFloat(
+      span.textContent.replace("R$", "").replace(",", ".").trim()
+    );
     if (!isNaN(valor)) total += valor;
   });
 
@@ -23,6 +24,8 @@ function calcularTotal() {
   if (spanTotal) {
     spanTotal.textContent = formatarValor(total);
   }
+
+  return total; // ✅ Agora retorna o número
 }
 
 // Renderiza os produtos salvos
@@ -64,8 +67,7 @@ document.querySelectorAll(".remove-product-button").forEach(button => {
     calcularTotal();
   });
 });
-// --- CÓDIGO ANTERIOR (seu carrinho e soma dos itens) ---
-// ... [seu código existente até o final do arquivo] ...
+
 
 // === GERAÇÃO DO QR CODE ===
 
@@ -82,16 +84,13 @@ function gerarQRCodePix() {
   const totalSpan = document.querySelector(".total span.total, .total > .total");
   if (!totalSpan) return alert("Total não encontrado.");
 
-  // Obtém o valor numérico
   const valorTexto = totalSpan.textContent.replace("R$", "").replace(",", ".").trim();
   const valor = parseFloat(valorTexto);
-  if (isNaN(valor)) return alert("Valor inválido.");
+  if (isNaN(valor) || valor <= 0) return alert("Valor inválido ou sacola vazia.");
 
-  // Simula um código PIX (aqui você pode colocar sua chave real, se quiser)
   const chavePix = "chavepix@exemplo.com";
   const mensagem = `Pagamento via PIX\nChave: ${chavePix}\nValor: R$ ${valor.toFixed(2)}`;
-  
-  // Limpa QR anterior e gera novo
+
   qrcodeDiv.innerHTML = "";
   new QRCode(qrcodeDiv, {
     text: mensagem,
@@ -112,32 +111,50 @@ fecharBtn.addEventListener("click", () => {
   qrcodeContainer.style.display = "none";
 });
 
+
 // === BOTÃO "FAZER PEDIDO" ===
 const btnPedido = document.querySelector(".order-button");
 
 if (btnPedido) {
   btnPedido.addEventListener("click", () => {
-    const total = calcularTotal();
+    const total = calcularTotal(); // ✅ agora retorna valor numérico
 
     if (total <= 0) {
-      alert("Sua sacola está vazia! Adicione itens antes de fazer o pedido.");
+      alert("❌ Sua sacola está vazia! Adicione itens antes de fazer o pedido.");
       return;
     }
 
-    // Confirma o pedido
-    alert("✅ Pedido realizado com sucesso!");
+    // === SALVAR PEDIDO ===
 
-    // Limpa o carrinho na tela
-    container_itens.innerHTML = "";
+    // Pega itens atuais
+    let itens_sacola = JSON.parse(localStorage.getItem("info_produto")) || [];
 
-    // Limpa o localStorage
+    // Monta lista de itens para o pedido
+    const listaItens = itens_sacola.map(item => {
+      return `${item.nome} - ${item.valor}`;
+    });
+
+    // Carrega pedidos já existentes
+    let pedidosExistentes = JSON.parse(localStorage.getItem("pedidos_salvos")) || [];
+
+    // Cria objeto do pedido
+    const pedido = {
+      itens: listaItens,
+      total: total,
+      pagamento: "PIX"
+    };
+
+    // Salva no localStorage
+    pedidosExistentes.push(pedido);
+    localStorage.setItem("pedidos_salvos", JSON.stringify(pedidosExistentes));
+
+    alert("✅ Pedido enviado com sucesso!");
+
+    // Limpa a sacola
     localStorage.removeItem("info_produto");
 
-    // Atualiza o total para R$ 0,00
-    const spanTotal = document.querySelector(".total");
-    if (spanTotal) {
-      spanTotal.textContent = "R$ 0,00";
-    }
+    // Vai para a tela de pedidos
+    window.location.href = "pedidoscliente.html";
 
   });
 }

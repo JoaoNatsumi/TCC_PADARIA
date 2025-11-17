@@ -2,10 +2,10 @@
 
   body {
     background-image: none;
-    height: 100vh;
+    height: 0vh;
     width: 100vw;
     font-family: "Poppins", sans-serif;
-    background-color: #f6eee8;
+    background-color: #D4B99E;
   }
 
   .container_header {
@@ -21,12 +21,7 @@
     align-items: center;
     font-weight: 500;
     font-size: 19px;
-    gap: 24px;
-
-
-
   }
-
 
   #img_header {
     display: flex;
@@ -42,15 +37,48 @@
   .container_body {
     width: 89vw;
     margin: 40px 25px;
-
   }
 
+
   .container_body h2 {
-    font-weight: 900;
-    font-size: 25px;
-    padding-bottom: 40px;
+    font-weight: 600;
+    font-size: 24px;
+    padding-bottom: 8px;
     text-align: center;
     color: #451a0e;
+  }
+
+  .container_body h3 {
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    color: #451a0e;
+    padding-top: 1px;
+  }
+
+  .container_title h3 {
+    font-weight: 600;
+    font-size: 24px;
+    padding-bottom: 13px;
+    text-align: center;
+    color: #451a0e;
+  }
+
+  .sub_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 17px 0px;
+  }
+
+  .sub_title img {
+    width: 30px;
+    height: 30px;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   .comidas_body h3 {
@@ -77,64 +105,111 @@
     font-weight: 200;
   }
 
-  .div_produtos {
-    width: 160px;
-    height: 140px;
-    border-radius: 15px;
-    margin: 5px 0px;
-    font-size: 20px;
-    text-align: center;
-    color: #451a0e;
-    font-weight: bolder;
-    padding: 10px;
-    background-color: #ffffff;
+  .container_title {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%;
+  margin-top: -10px;
+}
 
+  .container_title img {
+    width: 90px;
+    max-width: 100px; /* Exemplo: define o tamanho máximo das imagens */
+    height: auto;
   }
 
-  #produtos {
+  .texto-meio {
+    text-align: center;
+    flex-direction: column;
+  } 
+
+  /* ====== MELHORIA NOS CARDS DOS PRODUTOS ====== */
+  .div_produtos {
+    width: 150px;
+    height: 180px;
+    border-radius: 10px;
+    margin: 5px 0px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .div_produtos:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  #produtos,
+  #produtos2 {
     display: flex;
     gap: 20px;
+    justify-content: center;
+    /* centraliza container na página */
+    align-items: center;
+    width: 100%;
+  }
+
+  .div_produtos img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
   }
 
   .div_produtos img {
     width: 120px;
     height: 120px;
     border-radius: 10px;
-
+    object-fit: cover;
   }
 
-
   .div_produtos p {
-    margin-top: 5px;
-    font-size: 14px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: #451a0e;
   }
 
   .valor_produtos {
-    font-size: 15px;
-    color: #451a0e;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+  }
 
+  .valor_produtos p {
+    font-size: 18px;
+    font-weight: 800;
+    color: #451a0e;
+    margin: 0;
   }
 
   #produtos2 {
     display: flex;
     gap: 20px;
-
   }
 
   footer {
-    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #f4f4f4;
+    background-color: #c5ac94;
     text-align: center;
     padding: 10px 0;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 0px;
   }
 
   #container_footer img {
-    width: 32px;
-    height: 33px;
+    width: 37px;
     padding: 0px 28px;
   }
 
@@ -166,7 +241,7 @@
     text-align: justify;
     line-height: 15px;
     margin-top: 15px;
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .valor {
@@ -180,9 +255,9 @@
   }
 
   .container_sacola {
-    display: inline-flex;
     width: 100vw;
     margin-top: 90px;
+    text-align: center;
   }
 
   #sacola_img {
@@ -193,7 +268,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
   }
 
   #sacola_img img {
@@ -205,11 +279,13 @@
     background-color: #451a0e;
     border: solid 1px #451a0e;
     border-radius: 15px;
-    width: 250px;
-    height: 32px;
-    color: #c69c73;
-    font-size: 12px;
+    width: 307px;
+    height: 47px;
+    color: #c4ab93;
+    font-size: 15px;
+    font-weight: 600;
   }
+
 
   .valor {
     font-weight: 800;
@@ -233,7 +309,6 @@
     align-items: center;
     width: 100vw;
     background-color: #f6eee8;
-
   }
 
   .body_estoque h1 {
@@ -284,7 +359,6 @@
   .container_button {
     display: flex;
     justify-content: space-between;
-
   }
 
   .button {
@@ -300,7 +374,6 @@
     z-index: 0;
     border-radius: 10px;
   }
-
 
   .estoque h3 {
     color: #451a0e;
@@ -322,6 +395,5 @@
     display: block;
     align-self: center;
     margin-top: 65px;
-
   }
 }

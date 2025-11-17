@@ -1,0 +1,45 @@
+/* === Layout básico === */
+html, body {
+    height: 100%; /* Garante que o body ocupe toda a tela */
+    margin: 0;
+    padding: 0;
+}
+
+/* Faz o body virar um container flex vertical */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* joga o footer pro fim */
+    background-image: url('../../img/plano_de_fundo.jpeg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh; /* ocupa altura total da janela */
+}
+
+body img {
+    width: 400px;
+    margin: auto; /* centraliza */
+    display: block;
+}
+
+/* === Footer fixo ao fim === */
+footer {
+    width: 100%;
+    background-color: #5c2e14;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ícones dentro do footer */
+#container_footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#container_footer img {
+    width: 37px;
+}

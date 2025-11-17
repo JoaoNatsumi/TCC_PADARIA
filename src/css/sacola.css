@@ -2,7 +2,7 @@
 
 
 body {
-  background-color: #f7f5f5;
+  background-color: #D4B99E;
   color: #3b1f14;
   display: flex;
   justify-content: center;
@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-  background-color: white;
+  background-color: #c5ad96;
   padding: 20px;
   width: 100%;
   max-width: 400px;
